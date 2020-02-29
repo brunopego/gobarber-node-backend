@@ -5,7 +5,6 @@ class File extends Model {
     super.init(
       {
         name: Sequelize.STRING,
-        email: Sequelize.STRING,
         path: Sequelize.STRING,
       },
       {
