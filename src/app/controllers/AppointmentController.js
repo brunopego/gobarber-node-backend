@@ -4,6 +4,10 @@ import Appointment from '../models/Appointment';
 import User from '../models/User';
 
 class AppointmentController {
+  async index(req, res) {
+    return '';
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       provider_id: Yup.number().required(),
