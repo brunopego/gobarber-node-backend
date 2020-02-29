@@ -20,6 +20,7 @@ routes.post('/users', UserController.store);
 routes.use(authMiddleware);
 // Only the routes below will use the auth middleware
 
+routes.get('/appointments', AppointmentController.index);
 routes.post('/appointments', AppointmentController.store);
 
 routes.post('/files', upload.single('file'), FileController.store);
