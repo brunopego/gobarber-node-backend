@@ -13,18 +13,19 @@ import authMiddleware from './app/midddlewares/auth';
 const routes = new Router();
 const upload = multer(multerConfig);
 
-routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
+routes.post('/users', UserController.store);
 
 // Global Middleware
 routes.use(authMiddleware);
-// Only the route below will use the auth middleware
-routes.put('/users', UserController.update);
+// Only the routes below will use the auth middleware
 
-routes.get('/providers', ProviderController.index);
+routes.post('/appointments', AppointmentController.store);
 
 routes.post('/files', upload.single('file'), FileController.store);
 
-routes.post('/appointments', AppointmentController.store);
+routes.get('/providers', ProviderController.index);
+
+routes.put('/users', UserController.update);
 
 export default routes;
